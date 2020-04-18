@@ -55,5 +55,12 @@ namespace CoreFaceDetector.Services
                 return resultStream;
             }
         }
+
+        public class ResclaledStreamResult
+        {
+            public Stream Stream { get; set; }
+
+            public double ScaleFactor { get; set; }
+        }
     }
 }
