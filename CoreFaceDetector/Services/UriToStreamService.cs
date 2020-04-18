@@ -4,7 +4,7 @@ using System.Net;
 
 namespace CoreFaceDetector.Services
 {
-    public class UrlToStreamService
+    public class UriToStreamService
     {
         public Stream GetStream(string url)
         {

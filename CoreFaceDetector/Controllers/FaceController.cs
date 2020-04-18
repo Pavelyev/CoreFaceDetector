@@ -12,10 +12,10 @@ namespace CoreFaceDetector.Controllers
     public class FaceController : ControllerBase
     {
         private readonly CascadeClassifier cascadeClassifier;
-        private readonly UrlToStreamService urlToStreamService;
+        private readonly UriToStreamService urlToStreamService;
         private readonly ImageResizer imageResizer;
 
-        public FaceController(IWebHostEnvironment webHostEnvironment, UrlToStreamService urlToStreamService, ImageResizer imageResizer)
+        public FaceController(IWebHostEnvironment webHostEnvironment, UriToStreamService urlToStreamService, ImageResizer imageResizer)
         {
             var path = webHostEnvironment.ContentRootFileProvider.GetFileInfo("Cascades/haarcascade_frontalface_default.xml").PhysicalPath;
             this.cascadeClassifier = new CascadeClassifier(path);

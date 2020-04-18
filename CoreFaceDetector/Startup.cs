@@ -20,7 +20,7 @@ namespace CoreFaceDetector
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<UrlToStreamService>();
+            services.AddTransient<UriToStreamService>();
             services.AddSingleton<ImageResizer>();
         }
 
