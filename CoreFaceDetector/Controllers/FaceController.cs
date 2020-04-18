@@ -1,11 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.Linq;
 using CoreFaceDetector.Models;
 using CoreFaceDetector.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.FileProviders;
 using OpenCvSharp;
 
 namespace CoreFaceDetector.Controllers
