@@ -27,9 +27,9 @@ namespace CoreFaceDetector.Controllers
 
         [HttpGet]
         [Route("[action]")]
-        public IActionResult Detect(string url)
+        public IActionResult Detect(string uri)
         {
-            var stream = this.urlToStreamService.GetStream(url);
+            var stream = this.urlToStreamService.GetStream(uri);
 
             var resclaledStreamResult = this.imageResizer.Rescale(stream, 500);
 
