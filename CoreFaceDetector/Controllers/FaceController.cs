@@ -18,11 +18,12 @@ namespace CoreFaceDetector.Controllers
         private readonly UrlToStreamService urlToStreamService;
         private readonly ImageResizer imageResizer;
 
-        public FaceController(IWebHostEnvironment webHostEnvironment, UrlToStreamService urlToStreamService)
+        public FaceController(IWebHostEnvironment webHostEnvironment, UrlToStreamService urlToStreamService, ImageResizer imageResizer)
         {
             var path = webHostEnvironment.ContentRootFileProvider.GetFileInfo("Cascades/haarcascade_frontalface_default.xml").PhysicalPath;
             this.cascadeClassifier = new CascadeClassifier(path);
             this.urlToStreamService = urlToStreamService;
+            this.imageResizer = imageResizer;
         }
 
         [HttpGet]
