@@ -7,13 +7,23 @@ namespace CoreFaceDetector.Services
 {
     public class ImageResizer
     {
-        public ResclaledStreamResult Rescale(Stream imageStream, int max)
+        public ResclaledStreamResult Rescale(Stream imageStream, int rescaleTrigger, int rescaleSize)
         {
             using (Image image = Image.FromStream(imageStream))
             {
                 var maxSide = Math.Max(image.Width, image.Height);
 
-                var scaleFactor = (double)max / maxSide;
+                double scaleFactor;
+
+                if (maxSide <= rescaleTrigger)
+                {
+                    scaleFactor = 1;
+                }
+                else
+                {
+                    scaleFactor = (double)rescaleSize / maxSide;
+                }
+
 
                 if (scaleFactor >= 1)
                 {

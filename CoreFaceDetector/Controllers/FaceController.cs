@@ -29,7 +29,7 @@ namespace CoreFaceDetector.Controllers
         {
             var stream = this.urlToStreamService.GetStream(uri);
 
-            var resclaledStreamResult = this.imageResizer.Rescale(stream, 500);
+            var resclaledStreamResult = this.imageResizer.Rescale(stream, 1500, 1000);
 
             var mat = Mat.FromStream(resclaledStreamResult.Stream, ImreadModes.Grayscale);
 
